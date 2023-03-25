@@ -1,0 +1,14 @@
+
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    {% for product in products %}
+
+        <tr>
+            <th scope="row">{{ product.id }}</th>
+            <td>{{ product.productName }}</td>
+        </tr>
+    {% endfor %}
+
+{% endblock %}

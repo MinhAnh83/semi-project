@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<a href="{{ path('category_list') }}" class="btn btn-info">Back to Product List</a>
+<hr/>
+<h2 class="page-header">{{ category.CatName }}</h2>
+<ul class="list-group">
+    <li class="list-group-item"><h5>Description:</h5>{{ category.description }}</li>
+    <li class="list-group-item" >Name product:
+    {% for product in category.products %}
+   {{product.ProductName }} ,
+    {% endfor %}
+</li>
+</ul>
+
+{% endblock %}

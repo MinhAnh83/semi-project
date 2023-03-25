@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+
+    <div class="form-group">
+        <label for="category">Author Name:</label>
+        {{ form_widget(form.AuthorName,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Author name'
+            }
+        }) }}
+    </div>
+
+    <div class="form-group">
+        <label for="description">Biography:</label>
+        {{ form_widget(form.Biography,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Biography'
+            }
+        }) }}
+    </div>
+
+
+
+    <input type="submit" name="author_edit" value="Edit" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}

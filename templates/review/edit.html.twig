@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        <label for="author">Review Content</label>
+        {{ form_widget(form.ReviewContent,{
+            'attr':{
+                'class':'form-control'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="author">Review Content</label>
+        {{ form_widget(form.ReviewContent,{
+            'attr':{
+                'class':'form-control'
+            }
+        }) }}
+    </div>
+
+
+    <div class="form-group">
+        <label for="category">Ranking</label>
+        {{ form_widget(form.Ranking,{
+            'attr':{
+                'class':'form-control'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="ProductName">Review Date:</label>
+        {{ form_widget(form.ReviewDate,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Product name'
+            }
+        }) }}
+    </div>
+
+    <input type="submit" name="review_edit" value="Review" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}

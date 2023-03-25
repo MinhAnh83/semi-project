@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/starter-template/">
+
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    {#        <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">#}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+    {% block body %}
+    <style>
+        .dropdown-item:focus, .dropdown-item:hover {
+            color: #fff;
+            text-decoration: none;
+            background-color: #a9c6e3;
+            font-weight: 400;}
+        .divider:after,
+        .divider:before {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="{{ path('get_product') }}">
+                NGUYET CAT
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('get_product') }}">HOME</a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ path('get_product') }}">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+
+
+                    <a class="nav-link" href="{{ path('app_login') }}">Login</a>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('register') }}">Register</a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            UPLOAD
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('review_create') }}">Review</a>
+                            <a class="dropdown-item" href="{{ path('product_create_page') }}">Product</a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+    <h2 class="page-header" style="text-align: center;text-transform:uppercase;font-family: Arial;">{{ products.ProductName }}</h2>
+
+        <div class="row" style="margin-top: 30px;">
+
+            <div class="col-sm-7" style="margin-left: 10px;">
+                <h6 style="border: 5px black dotted;padding: 5px;max-width: 100px;background-color: #00aced; color: white; font-weight: 500">Information</h6>
+                <ul>
+                    <li>
+                        <span>Author: </span>{{ products.author.AuthorName }}
+                    </li>
+                    <li>
+                        <span>Tag: </span>{{ products.Tag.TagName }}
+                    </li>
+                    <li>
+                        <span>Category: </span>{{ products.Category.CatName }}
+                    </li>
+                </ul>
+                <ul class="list-group">
+
+
+                    <li class="list-group-item">      <h6>Content of review:</h6>  <br>
+<ul>
+                        {% for review in reviews %}
+
+                           <li><p>{{review.ReviewContent }}  <span style="padding: 5px; border-radius: 2px; background-color: #B0413E; color: white; font-weight: 500; margin-left: 20px;">Ranking:</span><strong style="margin-left: 10px;">{{review.Ranking }}</strong></p> <i></i> </li>
+                            <li>{{review.user.email }}</li>
+
+                        {% endfor %}
+</ul>
+            </div>
+            <div class="col-sm-3">
+                <img src="{{ asset('upload/imageProduct/' ~ products.ProductImages ) }}" style="width: 200px; height: 200px; margin-bottom: 20px;">
+            </div>
+        </div>
+
+
+
+
+
+        </li>
+
+
+
+
+
+
+    </ul>
+{% endblock %}
+    </body>
+</html>
+

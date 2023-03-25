@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+   .img-product{
+       border-radius: 20px;
+       box-shadow:  2px 5px #888888;;
+   }
+</style>
+<a href="{{ path('product_list') }}" class="btn btn-info">Back to Product List</a>
+<hr/>
+<h2 class="page-header" style="text-align: center;">{{ products.productName }}</h2>
+<ul class="list-group">
+    <img class="img-product" src="{{ asset('upload/imageProduct/' ~ products.ProductImages ) }}" style="width: 100px; height: 100px;list-style-type: none; margin: auto;margin-bottom: 20px;">
+    <li class="list-group-item">Author: {{ products.author.AuthorName }}</li>
+    <li class="list-group-item">Chapter: {{ products.tag.TagName }}</li>
+    <li class="list-group-item">Chapter: {{ products.NumberChapter }}</li>
+    <li class="list-group-item">Category: {{ products.category.CatName }}</li>
+{#    <li class="list-group-item">Author: {{ products.reviews.ReviewContent }}</li>#}
+
+    <li class="list-group-item">Due: <strong>{{ products.ProductDate|date('F j,Y, g:i a') }}</strong></li>
+
+{#    <li class="list-group-item"><p>Content: {{ products.review.ReviewContent }}</p></li>#}
+
+
+
+
+</ul>
+
+{% endblock %}

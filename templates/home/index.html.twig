@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/starter-template/">
+
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+
+    <!-- Bootstrap core CSS -->
+{#        <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">#}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+{#    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">#}
+    {% block stylesheets %}{% endblock %}
+
+
+</head>
+<body>
+{#{% block title %}Hello HomeController!{% endblock %}#}
+
+{% block body %}
+    <style>
+    *{
+        margin:0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #eefafb;
+    }
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .poly-prod{
+        text-align:center;
+        padding:5px;
+    }
+
+    .poly-prod .panel-body img{
+        height: 150px;
+        max-width: 95%;
+    }
+
+    section {
+        width: 100%;
+        display: inline-block;
+        background: #333;
+        height: 50vh;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    .footer-distributed{
+        background: #666;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 55px 50px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    /* Footer left */
+
+    .footer-distributed .footer-left{
+        width: 40%;
+    }
+
+    /* The company logo */
+
+    .footer-distributed h3{
+        color:  #ffffff;
+        font: normal 36px 'Open Sans', cursive;
+        margin: 0;
+    }
+
+    .footer-distributed h3 span{
+        color:  lightseagreen;
+    }
+
+    /* Footer links */
+
+    .footer-distributed .footer-links{
+        color:  #ffffff;
+        margin: 20px 0 12px;
+        padding: 0;
+    }
+
+    .footer-distributed .footer-links a{
+        display:inline-block;
+        line-height: 1.8;
+        font-weight:400;
+        text-decoration: none;
+        color:  inherit;
+    }
+
+    .footer-distributed .footer-company-name{
+        color:  #222;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    /* Footer Center */
+
+    .footer-distributed .footer-center{
+        width: 35%;
+    }
+
+    .footer-distributed .footer-center i{
+        background-color:  #33383b;
+        color: #ffffff;
+        font-size: 25px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 42px;
+        margin: 10px 15px;
+        vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope{
+        font-size: 17px;
+        line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p{
+        display: inline-block;
+        color: #ffffff;
+        font-weight:400;
+        vertical-align: middle;
+        margin:0;
+    }
+
+    .footer-distributed .footer-center p span{
+        display:block;
+        font-weight: normal;
+        font-size:14px;
+        line-height:2;
+    }
+
+    .footer-distributed .footer-center p a{
+        color:  lightseagreen;
+        text-decoration: none;;
+    }
+
+    .footer-distributed .footer-links a:before {
+        content: "|";
+        font-weight:300;
+        font-size: 20px;
+        left: 0;
+        color: #fff;
+        display: inline-block;
+        padding-right: 5px;
+    }
+
+    .footer-distributed .footer-links .link-1:before {
+        content: none;
+    }
+
+    /* Footer Right */
+
+    .footer-distributed .footer-right{
+        width: 20%;
+    }
+
+    .footer-distributed .footer-company-about{
+        line-height: 20px;
+        color:  #92999f;
+        font-size: 13px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    .footer-distributed .footer-company-about span{
+        display: block;
+        color:  #ffffff;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons{
+        margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a{
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        background-color:  #33383b;
+        border-radius: 2px;
+
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        line-height: 35px;
+
+        margin-right: 3px;
+        margin-bottom: 5px;
+    }
+
+    /* If you don't want the footer to be responsive, remove these media queries */
+
+    @media (max-width: 880px) {
+
+        .footer-distributed{
+            font: bold 14px sans-serif;
+        }
+
+        .footer-distributed .footer-left,
+        .footer-distributed .footer-center,
+        .footer-distributed .footer-right{
+            display: block;
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .footer-distributed .footer-center i{
+            margin-left: 0;
+        }
+
+    }
+
+
+    </style>
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset('upload/imageProduct/slider2.png' ) }}" alt="Los Angeles" width="1100" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('upload/imageProduct/image2.jpg' ) }}" alt="Chicago" width="1100" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset('upload/imageProduct/image3.jpg' ) }}" alt="New York" width="1100" height="500">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+{#menu#}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="{{ path('get_product') }}">
+              NGUYỆT CÁT
+            </a>
+<style>
+    li:hover.nav-item{
+        background-color: gray;
+    }
+    .dropdown-item:focus, .dropdown-item:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: #a9c6e3;
+        font-weight: 400;}
+</style>
+            <div class="collapse navbar-collapse menu" id="navbarSupportedContent" >
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{ path('get_product') }}">HOME</a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{ path('contact') }}">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+
+
+                        <a class="nav-link" href="{{ path('app_login') }}">Login</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('register') }}">Register</a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            UPLOAD <i class="fa fa-upload"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('review_create') }}">Review</a>
+                            <a class="dropdown-item" href="{{ path('product_create_page') }}">Product</a>
+
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+<div class="row" style="margin-top: 20px;">
+
+    <a href="" class="btn btn-success">REVIEW TRUYEN</a>
+</div>
+    <div class="row" style="width: 100%; padding: 0; margin-top: 20px;margin-left: auto;margin-right: auto; min-height: 1500px; ">
+        <div class="col-sm-9">
+            {% for product in products %}
+             <div class = "poly-prod" style="width: calc(100%/3); float: left;   box-sizing: border-box;">
+                <div class = "panel panel-default" style="padding: -5px;">
+                    <div class = "panel-heading" style="background-color: #ccc;">
+                        <h4 class = "panel-title">
+                            {{ product.productName }}
+                        </h4>
+                    </div>
+
+                    <div class = "panel-body" >
+                        <img src="{{ asset('upload/imageProduct/' ~ product.ProductImages) }}" height="228" width="292"/></div>
+                    <div class = "panel-body" style="margin-top: 10px; margin-bottom: 0.5rem;">
+                        <p>Author:  {{ product.author.AuthorName }} <br>
+                        <span>Category:  </span>    {{ product.category.CatName}}</p>
+
+
+                    </div>
+
+
+
+
+                        <div class = "panel-footer" style="margin-bottom: 10px;">
+                            <a href="{{path('review_product',{'id':product.id})}}" class="btn btn-success">Review</a>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+<div class="col-sm-3">
+            <div class=" btn-group-vertical " style="width: 100%;" >
+                <div class="panel-heading">
+                    <span class = "glyphicon glyphicon-th-list"></span>
+                    <strong>Chủng Loại</strong>
+                </div>
+                <div class="list-group"  style="min-width: 300px;">
+                    {% for category in categories %}
+                    <a href="{{ path('category_pages', {'id': category.id}) }} " class="list-group-item">{{ category.CatName }}</a>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <img src="{{ asset('upload/imageProduct/banner.jpg') }}" style="width: 100%;"
+    </div>
+
+
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>Web<span>Nguyet Cat</span></h3>
+
+            <p class="footer-links">
+                <a href="{{ path('get_product') }}" class="link-1">Home</a>
+
+                <a href="{{ path('contact') }}">Contact</a>
+
+                <a href="{{ path('app_login') }}">Login</a>
+
+
+                <a href="{{ path('register') }}">Register</a>
+
+
+            </p>
+
+            <p class="footer-company-name">Nguyet Cat © 2023</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>30 Thich Quang Duc</span> Phu Nhuan, Ho Chi Minh City </p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+39 35195087</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="#">support@Nguyetcat.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span>
+                Nguyet Cat helps users can view review the novels before deciding to read. This helps them avoid reading novels that are unsuitable for them and provide more fantastic novels.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+{% endblock %}
+</body>
+</html>

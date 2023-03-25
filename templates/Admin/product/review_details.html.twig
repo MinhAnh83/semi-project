@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+
+
+
+    <h2 class="page-header" style="text-align: center;text-transform:uppercase;font-family: Arial;">{{ products.ProductName }}</h2>
+
+    <ul class="list-group">
+
+
+        <li class="list-group-item">Content of review:
+{% for review in reviews %}
+            {{review.ReviewContent }}
+            {% endfor %}
+
+        </li>
+
+
+
+
+
+
+    </ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('author_list') }}" class="btn btn-info">Back to Product List</a>
+    <hr/>
+    <h2 class="page-header">{{ author.AuthorName }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><h5>Biography:</h5>{{ author.Biography }}</li>
+        <li class="list-group-item" >Name product:
+            {% for product in author.products %}
+                {{product.ProductName }} ,
+            {% endfor %}
+        </li>
+    </ul>
+
+{% endblock %}

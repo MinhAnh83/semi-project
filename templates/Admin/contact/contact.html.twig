@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductController!{% endblock %}
+
+
+
+{% block body %}
+    <style>
+        .col-md-12 {
+            margin-top: 23px;
+        }
+        .col-md-12 {
+            margin-top: 23px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+        }
+    </style>
+
+    {#<div class="bs-example" data-example-id="striped-table">#}
+    {#    <table class="table table-striped">#}
+    {#        <thead>#}
+    {#        <tr>#}
+    {#            <th>#</th>#}
+    {#            <th>Category</th>#}
+
+    {#        </tr>#}
+    {#        </thead>#}
+    {#        <tbody>#}
+    {#        {% for category in categories %}#}
+    {#        <tr>#}
+    {#            <th scope="row">{{ category.id }}</th>#}
+    {#            <td><a href="{{{'id':category.id})}} ">{{ category.CatName }}</a></td>#}
+
+    {#            <td>#}
+    {#                                       <a href="{{ path('category_details', {'id': product.id}) }} " class='btn btn-success'>View</a>#}
+    {#                                        <a href="{{ path('category_edit', {'id': product.id}) }}" class='btn btn-default'>Edit</a>#}
+    {#                                        <a href="{{ path('category_delete', {'id': product.id}) }}" class='btn btn-danger'>Delete</a>#}
+
+    {#            </td>#}
+    {#        </tr>#}
+    {#        {% endfor %}#}
+    {#        </tbody>#}
+    {#    </table>#}
+    {#</div>#}
+    <div class="bs-example" data-example-id="striped-table">
+        <table class="table table-striped">
+            <thead>
+            <tr style="background-color: black; color: white; font-weight: 500">
+
+                <th>#</th>
+                <th>Username </th>
+                <th>Email <i class="fa fa-grav" ></i></th>
+                <th>Subject </th>
+
+                <th>Message </th>
+
+                <th></th>
+
+                <th >Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <th scope="row">{{ contact.id }}</th>
+                    <td>{{ contact.contactname }}</td>
+                    <td>{{ contact.contactemail }}</td>
+                    <td>{{ contact.subject}}</td>
+                    <td>{{ contact.message}}</td>
+                    <td></td>
+
+<td> <a href="{{ path('contact_delete', {'id': contact.id}) }}" class='btn btn-danger'> <i class="fa fa-trash"></i></a></td>
+
+                </tr>
+            {% endfor %}
+
+
+
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
+

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        .box{
+            border: 1px solid #000;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+        }
+
+
+        i.fa.fa-firefox {
+            box-shadow: rgba(0, 0, 0, 0.4) 10px 0px 10px;
+            width: 35px;
+        }
+        label{
+            font-weight: 500;
+        }
+        .box {
+            background-color: #f9e9f6;
+        }
+    </style>
+    <div class="box">
+        <i class="fa fa-firefox" style="font-size: 50px; color: orangered; text-align: center;     margin-left: auto;
+    margin-right: auto;display: flex; justify-content: center; background-color: #8f1f1f; border-radius: 30px "></i>
+        {{ form_start(form) }}
+        <i class="fa fa-grav"></i>
+
+        <div class="form-group">
+            <label for="category">Author Name:</label>
+            {{ form_widget(form.AuthorName,{
+                'attr':{
+                    'class':'form-control',
+                    'placeholder': 'Author name'
+                }
+            }) }}
+        </div>
+
+        <div class="form-group">
+            <label for="description">Biography <i class="fa fa-history"></i> :</label>
+            {{ form_widget(form.Biography,{
+                'attr':{
+                    'class':'form-control',
+                    'placeholder': 'Biography'
+                }
+            }) }}
+        </div>
+
+
+
+        <input type="submit" name="author_create" value="Create" class="btn btn-info"/>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
