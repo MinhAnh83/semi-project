@@ -49,16 +49,7 @@ class ProductController extends AbstractController
         return $this->render('Admin/product/index.html.twig', ['products' => $products, 'categories' => $categories, 'reviews' => $reviews]);
     }
 
-//    /**
-//     * @Route("Admin/user", name="user_list")
-//     */
-//
-//    public function listUser(ManagerRegistry $doctrine): Response
-//    {
-//        $users = $doctrine->getRepository('App\Entity\User')->findAll();
-//
-//        return $this->render('Admin/user/index.html.twig', ['users' => $users]);
-//    }
+
 
 
     /**
@@ -181,7 +172,7 @@ class ProductController extends AbstractController
                 ['id' => $product->getId()]);
 
         }
-        return $this->renderForm('Admin/product/edit.html.twig', ['form' => $form,]);
+        return $this->renderForm('Amin/product/edit.html.twig', ['form' => $form,]);
     }
 
 }
